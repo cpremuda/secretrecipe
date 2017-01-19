@@ -33,7 +33,7 @@ module.exports = {
             transform : [
                 'rewireify'
             ],
-            external : ['myApp.js'],
+            external : ['MY_APP.js'],
             // Embed source map for tests
             debug : true
         }

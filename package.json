@@ -1,10 +1,10 @@
 {
-  "name": "TODO",
+  "name": "MY_APP",
   "version": "0.0.1",
-  "description": "Front End Code for You TODO Application",
+  "description": "Front End Code for MY_APP Application",
   "author": "Greg Miller",
   "license": "ISC",
-  "main": "src/TODO.js",
+  "main": "src/MY_APP.js",
   "directories": {
     "test": "test"
   },
@@ -13,12 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.intuit.com/TODO/Application-UI.git"
+    "url": "https://github.com/MY_APP.git"
   },
   "devDependencies": {
     "browserify": "^10.2.4",
     "browserify-istanbul": "^0.2.1",
-    "chai": "3.0.x",
+    "chai": "3.2.x",
+    "sinon": "1.17.x",
     "grunt": "^0.4.5",
     "grunt-browser-sync": "^2.2.0",
     "grunt-browserify": "^3.7.0",
@@ -36,27 +37,24 @@
     "grunt-minjson": "^0.3.0",
     "grunt-mocha-istanbul": "~2.4.0",
     "grunt-mocha-phantomjs": "*",
-    "karma": "^0.12.37",
-    "karma-browserify": "^4.2.1",
-    "karma-chai": "^0.1.0",
-    "karma-chai-plugins": "^0.6.0",
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-commonjs": "0.0.13",
-    "karma-firefox-launcher": "^0.1.6",
+    "karma": "^1.4.0",
+    "karma-browserify": "^5.1.0",
+    "karma-sinon-chai": "^1.2.4",
+    "karma-chai-plugins": "^0.8.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-commonjs": "1.0.0",
     "karma-jquery": "^0.1.0",
     "karma-js-coverage": "^0.4.0",
-    "karma-junit-reporter": "^0.3.3",
-    "karma-mocha": "^0.2.0",
-    "karma-notify-reporter": "^0.1.1",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "karma-phantomjs-shim": "^1.0.0",
-    "karma-sinon": "^1.0.4",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-notify-reporter": "^1.0.1",
+    "karma-phantomjs-shim": "^1.4.0",
     "load-grunt-configs": "^0.4.1",
     "load-grunt-tasks": "^3.2.0",
     "mocha": "2.2.x",
     "phantomjs": "^1.9.17",
-    "rewireify": "~0.2.1",
-    "sinon": "1.15.x",
-    "tt-shared-templates": "git+https://github.intuit.com/mytt/shared-templates.git"
+    "rewireify": "~0.2.1"
   }
 }

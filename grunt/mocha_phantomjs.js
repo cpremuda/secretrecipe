@@ -2,7 +2,7 @@ module.exports = {
     all : {
         options : {
             urls : [
-                'http://127.0.0.1:63342/ui/test/index.html'
+                'http://127.0.0.1:63342/client/test/index.html'
             ]
         }
     }

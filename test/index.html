@@ -11,21 +11,21 @@
     <div id="messages"></div>
     <div id="fixtures"></div>
     <!-- load external dependencies -->
-    <script src="mojo.js"></script>
+    <script src="../app/scripts/thirdparty/mojo.js"></script>
     <script>
         Mojo.options.enableTraceConsole = false;
         Mojo.options.alertOnExceptions = false;
     </script>
 
     <!-- load Testing Framework -->
-    <script src="../../node_modules/mocha/mocha.js"></script>
-    <script src="../../node_modules/chai/chai.js"></script>
-    <script src="../../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
     <script>mocha.setup('bdd')</script>
 
     <!-- load tests -->
 
-    <script src="browserified_tests.js"></script>
+    <script src="../target/test/browserified_tests.js"></script>
     <script>mocha.run();</script>
 
 </body>

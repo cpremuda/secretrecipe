@@ -3,41 +3,41 @@ var assert = require('chai').assert;
 var expect = require('chai').expect;
 var sinon = require('sinon');
 
-var BA = require('../../src/BenefitAssist');
+var APP = require('../../src/MY_APP');
 
-describe("Benefit Assist", function () {
+describe("MY_APP", function () {
 
     beforeEach(function (){
     });
 
     describe("APIs", function () {
         it("should have a get version function", function () {
-            assert.typeOf(BA.getVersions, 'function');
+            assert.typeOf(APP.getVersions, 'function');
         });
 
     });
 
     describe("Get Version API", function () {
-        var v = BA.getVersions();
+        var v = APP.getVersions();
 
         expect(v).to.be.a('object')
     });
 
     describe("Controllers", function () {
         it("should have a set of controllers", function () {
-            assert.typeOf(BA.controllers, 'object');
+            assert.typeOf(APP.controllers, 'object');
         });
         it("should have a data controller", function () {
-            assert.typeOf(BA.controllers.data, 'object');
+            assert.typeOf(APP.controllers.data, 'object');
         });
         it("should have a logger controller", function () {
-            assert.typeOf(BA.controllers.logger, 'object');
+            assert.typeOf(APP.controllers.logger, 'object');
         });
         it("should have a search controller", function () {
-            assert.typeOf(BA.controllers.search, 'object');
+            assert.typeOf(APP.controllers.search, 'object');
         });
         it("should have a config controller", function () {
-            assert.typeOf(BA.controllers.config, 'object');
+            assert.typeOf(APP.controllers.config, 'object');
         });
     });
 
@@ -54,12 +54,12 @@ describe("Benefit Assist", function () {
     //
     //describe("Init", function () {
     //    it("Should have created a search Model" , function () {
-    //        BA.init();
+    //        APP.init();
     //        expect(Mojo.getModels()).to.contain("searchModel");
     //        expect(Mojo.getModels()).to.contain("searchResultsModel");
     //    });
     //    it("Should NOT have created a search results Model due to double init" , function () {
-    //        BA.init();
+    //        APP.init();
     //        expect(Mojo.getModels()).not.to.contain("searchModel");
     //        expect(Mojo.getModels()).not.to.contain("searchResultsModel");
     //    });

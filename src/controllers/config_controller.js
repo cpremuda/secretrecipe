@@ -72,7 +72,7 @@ if (CONFIG.queryString.abtest) {
 // when it returns, publish an event to let everyone else know
 // of the env
 //-------------------------------------
-(function _getRuntimeEnv () {
+function _getRuntimeEnv () {
 
     return http.get(endpoints.uiconfig, {}, function (err, results) {
         if (err) {
@@ -99,7 +99,8 @@ if (CONFIG.queryString.abtest) {
 
         }
     });
-})();
+}
+_getRuntimeEnv();
 
 
 //======================================

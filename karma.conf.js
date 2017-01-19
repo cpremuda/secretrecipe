@@ -10,6 +10,7 @@ module.exports = function (config) {
         // level of logging
         // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
         logLevel: config.LOG_INFO,
+        colors : true,
 
         reporters: ['dots', 'coverage', 'junit'],
 
@@ -28,8 +29,8 @@ module.exports = function (config) {
         files: [
             // 'app/scripts/config/mojo_config.js',
              'app/scripts/thirdparty/mojo.js',
-            // 'app/scripts/TODO.js',
-            'src/TODO.js',
+            // 'app/scripts/MY_APP.js',
+            'src/MY_APP.js',
             //            'app/scripts/thirdparty/mojo-dev.js',
             'test/tests/**/*.test.js'
             //            'app/scripts/**/*.js',
@@ -37,16 +38,11 @@ module.exports = function (config) {
         ],
 
         exclude: [
-            /*
-               'src/main/webapp/backbone/app/base/ui-interactions.js'
-               */
-
-            //'**/templates/**/*.js'
         ],
 
         preprocessors: {
             //          'test/suite.js': ['commonjs']
-            'src/TODO.js': ['browserify'],
+            'src/MY_APP.js': ['browserify'],
             'test/tests/**/*.test.js': ['browserify']
             // source files for coverage (these files will be instrumented by Istanbul)
             //'src/main/webapp/backbone/app/**/*.js': ['coverage']
@@ -68,7 +64,6 @@ module.exports = function (config) {
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-junit-reporter',
-            //            'karma-phantomjs-launcher',
             'karma-phantomjs-launcher'
         ],
 

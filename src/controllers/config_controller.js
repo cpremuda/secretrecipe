@@ -5,8 +5,17 @@ var endpoints = require('../config/constants').endpoints;
 var _version = require('../config/constants').version;
 var _component = "ConfigController";
 
+/**
+ * Set up a configuration module for our application to use
+ *
+ * We can use this for turning on/off features or functionality based on a number of conditions
+ *  - browser/OS
+ *  - runtime environment (dev/qa/prod)
+ *  - serverside configurations which can be updated realtime
+ *  - etc...
+ */
 var CONFIG = {
-    sessionId : Mojo.utils.uuid(true),
+    sessionId : Mojo.utils.uuid(true),  // assign a sessionid for this session
     queryString : {},
     supports : {
         fileUpload : (typeof FileReader != 'undefined')
@@ -71,6 +80,7 @@ if (CONFIG.queryString.abtest) {
 // Query the server for the env that we're running in.
 // when it returns, publish an event to let everyone else know
 // of the env
+// - execute immediately upon load of this js file
 //-------------------------------------
 function _getRuntimeEnv () {
 
@@ -84,7 +94,7 @@ function _getRuntimeEnv () {
             CONFIG.env = results.env;
             CONFIG.appVersion = results.version;
 
-            // TODO - set any 'supports' variables here
+            // TODO - set any 'supports' variables here that your server configuration sets up
 
             Mojo.setDataVal('configModel', "isProd", CONFIG.isProd);
             Mojo.setDataVal("configModel", "appVersion", CONFIG.appVersion);
@@ -101,7 +111,6 @@ function _getRuntimeEnv () {
     });
 }
 _getRuntimeEnv();
-
 
 //======================================
 // Private functionality

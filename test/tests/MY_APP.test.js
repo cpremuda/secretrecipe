@@ -24,44 +24,24 @@ describe("MY_APP", function () {
     });
 
     describe("Controllers", function () {
-        it("should have a set of controllers", function () {
+        it("should expose a set of controllers", function () {
             assert.typeOf(APP.controllers, 'object');
         });
-        it("should have a data controller", function () {
-            assert.typeOf(APP.controllers.data, 'object');
-        });
-        it("should have a logger controller", function () {
+        it("should expose a logger controller", function () {
             assert.typeOf(APP.controllers.logger, 'object');
         });
-        it("should have a search controller", function () {
-            assert.typeOf(APP.controllers.search, 'object');
+        it("should expose a auth controller", function () {
+            assert.typeOf(APP.controllers.auth, 'object');
         });
-        it("should have a config controller", function () {
+        it("should expose a config controller", function () {
             assert.typeOf(APP.controllers.config, 'object');
         });
     });
 
+    describe("Constants", function () {
+        it("should expose constants", function () {
+            assert.typeOf(APP.constants, 'object');
+        });
+    });
 
-
-    //describe("Pre-Init", function () {
-    //    it("Should have created a search Model" , function () {
-    //        expect(Mojo.getModels()).not.to.contain("searchModel");
-    //    });
-    //    it("Should have created a search results Model" , function () {
-    //        expect(Mojo.getModels()).not.to.contain("searchResultsModel");
-    //    });
-    //});
-    //
-    //describe("Init", function () {
-    //    it("Should have created a search Model" , function () {
-    //        APP.init();
-    //        expect(Mojo.getModels()).to.contain("searchModel");
-    //        expect(Mojo.getModels()).to.contain("searchResultsModel");
-    //    });
-    //    it("Should NOT have created a search results Model due to double init" , function () {
-    //        APP.init();
-    //        expect(Mojo.getModels()).not.to.contain("searchModel");
-    //        expect(Mojo.getModels()).not.to.contain("searchResultsModel");
-    //    });
-    //});
 });

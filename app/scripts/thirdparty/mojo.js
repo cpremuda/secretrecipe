@@ -2445,6 +2445,12 @@ X.$ = (function () {
                     this[name] = funcArg(this, value, idx, this[name])
                 })
         },
+        removeProp : function (name) {
+            name = propMap[name] || name
+            return this.each(function () {
+                delete this[name]
+            })
+        },
         data : function (name, value) {
             var data = this.attr('data-' + name.replace(capitalRE, '-$1').toLowerCase(), value)
             return data !== null ? deserializeValue(data) : undefined
@@ -2655,8 +2661,8 @@ X.$ = (function () {
         }
     }
 
-    // for now
-    //$.fn.detach = $.fn.remove
+        // for now
+        //$.fn.detach = $.fn.remove
 
         // Generate the `width` and `height` functions
     ;
@@ -5517,10 +5523,10 @@ X._.extend(X, {
 
     // support legacy
     publishEvent : function () {
-        X.publish.call(X.events.pubsub, arguments);
+        X.publish.apply(X.events.pubsub, arguments);
     },
     subscribeForEvent : function () {
-        X.subscribe.call(X.events.pubsub, arguments);
+        X.subscribe.apply(X.events.pubsub, arguments);
     }
 
 });

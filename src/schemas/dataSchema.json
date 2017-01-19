@@ -1,0 +1,15 @@
+{
+    "_metaData": {
+        "name": "Data Model",
+        "mutable": false
+    },
+    "firstname" : {
+        "type" : "STRING",
+        "format" : "maxLength(32)",
+        "validate" : ["required"]
+    },
+    "lastname" : {
+        "type" : "STRING",
+        "validate" : ["required"]
+    }
+}

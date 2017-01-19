@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #_debug_versionContainer {
+            color: #f5f5f5;
+            font-size: .84em;
+        }
+
+        #_debug_versionContainer  header {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+    </style>
+</head>
+<html>
+<body>
+<div id="_debug_versionContainer">
+
+    <div id="__bindings">
+        <header>MyApp Versions:</header>
+        <span>Environment:</span><b> ${configModel.env}</b><br/>
+        <span>Node Version:</span><b> ${configModel.appVersion}</b><br/>
+        <span>UI Version:</span><b> ${configModel.uiVersion}</b><br/>
+
+        <p>
+        <hr/>
+        </p>
+        <header>Screen Information:</header>
+        <span>Current Screen Id:</span><b> ${debugModel.currentScreenId}</b><br/>
+    </div>
+
+</div>
+
+<script>
+    Mojo.addModel('debugModel');
+    Mojo.applyBindings("__bindings")
+    Mojo.subscribeForEvent('pagefinal', function (data) {
+        Mojo.setDataVal('debugModel', 'currentScreenId', data.pageAlias)
+    });
+</script>
+</body>
+</html>

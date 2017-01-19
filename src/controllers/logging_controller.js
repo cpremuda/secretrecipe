@@ -2,6 +2,9 @@ var http = require('../services/http_service');
 var constants = require('../config/constants');
 var config_controller = require('./config_controller');
 
+/**
+ * Log errors from the UI to the server so we have context into what's going on our customer's computers
+ */
 var lc = {
 
     /**
@@ -18,7 +21,7 @@ var lc = {
                 {
                     logger : "uiLogger",
                     uiVersion : constants.version,
-                    authId : Mojo.getDataVal("APPLICATION_SCOPE", "auth_id"),
+                    authId : Mojo.getDataVal("authModel", "authId"),
                     sessionId : config_controller.sessionId,
                     logType : error.logType,
                     component : error.component,

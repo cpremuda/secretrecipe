@@ -15,26 +15,26 @@ describe("Auth Controller", function () {
 
     var svc = auth.__get__("http");
     var sandbox, spy;
-    var _pub = Mojo.publishEvent;
+    var _pub = Mojo.publish;
 
     beforeEach(function () {
-        Mojo.publishEvent = function () {
+        Mojo.publish = function () {
         };
     });
 
     afterEach(function () {
-        Mojo.publishEvent = _pub;
+        Mojo.publish = _pub;
     });
 
     describe("APIs", function () {
         it("should have a get logged in function", function () {
             assert.typeOf(auth.isLoggedIn, 'function');
         });
-        it("should have a get initWidget function", function () {
-            assert.typeOf(auth.initWidget, 'function');
+        it("should have a get login function", function () {
+            assert.typeOf(auth.login, 'function');
         });
-        it("should have a loadIUSScript function", function () {
-            assert.typeOf(auth.loadIUSScript, 'function');
+        it("should have a createAccount function", function () {
+            assert.typeOf(auth.createAccount, 'function');
         });
         it("should have a logout function", function () {
             assert.typeOf(auth.logout, 'function');
@@ -50,7 +50,7 @@ describe("Auth Controller", function () {
         afterEach(function () {
             sandbox.restore();
             svc.reset();
-            Mojo.clearData("APPLICATION_SCOPE");
+            Mojo.clearData("authModel");
         });
 
         it("Should be logged in", function (done) {
@@ -58,7 +58,7 @@ describe("Auth Controller", function () {
             auth.isLoggedIn().then(
                 function (result) {
                     assert.typeOf(result, 'boolean');
-                    expect(Mojo.getDataVal("APPLICATION_SCOPE", "isAuth")).to.equal(true);
+                    expect(Mojo.getDataVal("authModel", "loggedIn")).to.equal(true);
                     done();
 
                 },
@@ -73,7 +73,7 @@ describe("Auth Controller", function () {
             svc.mockResponse = {success : true, ticket : 132, userid : 456};
             auth.isLoggedIn().then(
                 function success (result) {
-                    expect(Mojo.getDataVal("APPLICATION_SCOPE", "isAuth")).to.equal(false);
+                    expect(Mojo.getDataVal("authModel", "loggedIn")).to.equal(false);
                     done();
                 },
                 function err (err) {
@@ -83,58 +83,4 @@ describe("Auth Controller", function () {
         });
     });
 
-
-    describe("Load Script", function () {
-        var sandbox, spy1, spy2, spy3;
-
-        beforeEach(function () {
-            sandbox = sinon.sandbox.create();
-        });
-
-        afterEach(function () {
-            sandbox.restore();
-        });
-
-
-        it("Should load the IUS script", function (done) {
-
-            auth.loadIUSScript().then(
-                function success() {
-                    done();
-                },
-                function error() {
-                    done();
-                }
-            );
-
-        });
-
-    });
-
-    describe("Init Widget", function () {
-        var sandbox, spy1, spy2, spy3;
-
-        beforeEach(function () {
-            sandbox = sinon.sandbox.create();
-            spy1 = sandbox.spy(intuit.ius.signIn, "setup");
-            spy2 = sandbox.spy(intuit.ius.accountRecovery, "setup");
-            spy3 = sandbox.spy(intuit.ius.signUp, "setup");
-        });
-
-        afterEach(function () {
-            sandbox.restore();
-        });
-
-
-        it("Should set up the IUS widget", function (done) {
-
-            auth.initWidget();
-
-            expect(spy1.called).to.equal(true);
-            expect(spy2.called).to.equal(true);
-            expect(spy3.called).to.equal(true);
-            done();
-        });
-
-    });
 });

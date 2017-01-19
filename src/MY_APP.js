@@ -7,22 +7,27 @@ var logger = require('./controllers/logging_controller'),
     auth = require('./controllers/auth_controller'),
     constants = require('./config/constants');
 
+var app = require('./app/MY_APPApp');
 
 module.exports = {
 
-    // Expose controllers to the UI and Mojo flows and UI.
+    // Expose controllers to the UI and Mojo flows and views.
     controllers : {
         auth : auth,
-        config : config
+        config : config,
+        logger : logger
     },
 
     constants : constants,
 
 
-    // Expose any controller functionality to top level
+    // App APIs
     getVersions : function () {
         return config.getVersions();
     }
 
 };
+
+// Fire up the app
+app.init();
 

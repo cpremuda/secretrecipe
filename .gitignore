@@ -1,0 +1,12 @@
+*.min.js.map
+browserified_tests.js
+node_modules/
+.idea/
+target/
+app/scripts/*.js
+app/scripts/*.min.js
+tt_design.css
+flowgraphdata.js
+npm-debug.log
+npm-shrinkwrap.json
+coverage

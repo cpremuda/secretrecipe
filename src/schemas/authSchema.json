@@ -1,0 +1,32 @@
+{
+    "_metaData": {
+        "name": "Authentication",
+        "mutable": false
+    },
+    "username" : {
+        "type" : "STRING",
+        "format" : "maxLength(32)",
+        "validate" : ["minLength(8), maxLength(32)"]
+    },
+    "password" : {
+        "type" : "STRING"
+    },
+    "password2" : {
+        "type" : "STRING",
+        "validation" : "sameAs('password'):message('Passwords don%27t match')"
+    },
+    "phone" : {
+        "type" : "STRING",
+        "format" : "phone",
+        "validate" : "phone"
+    },
+    "authId" : {
+        "type" : "STRING"
+    },
+    "isLoggedIn" : {
+        "type" : "BOOLEAN"
+    },
+    errorMsg : {
+        "type" : "STRING"
+    }
+}

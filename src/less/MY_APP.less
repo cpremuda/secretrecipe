@@ -1,0 +1,24 @@
+html, body { height: auto !important; min-height: auto !important; }
+
+body {
+    background: #f1f1f1;
+    font-family: "Avenir";
+    font-weight: 200;
+}
+
+// When using Bootstrap's grid system we need use the same "box" layout.
+div.row > div {
+  box-sizing: border-box;
+  text-align: left;
+}
+
+main {
+    div.view-wrapper {
+        position: relative;
+    }
+
+    div.unsupported-browser {
+        display: none;
+    }
+}
+

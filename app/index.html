@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>MY_APP</title>
+    <link rel="stylesheet" href="css/mojo.css"/>
+    <link rel="stylesheet" href="css/MY_APP.css"/>
+</head>
+<body data-mojo-app="MY_APP">
+<!-- start of header when user is not logged in-->
+<header class="mainLogo" role="banner">
+    <a href="index.html" class="header-logo" style="background-image: none">
+        <span class="logo-text" style="font-size: 1.7rem !important;">MyApp Demo</span></a>
+</header>
+<!-- end of header when user is logged in-->
+<main class="container" role="main">
+    <div class="view-wrapper">
+        <div data-viewport="content-area" data-viewport-options="{getSome : '@{BenefitAssist.controllers.config.getStartingFlow()}' }">
+            <!-- Content will be injected here -->
+        </div>
+    </div>
+</main>
+
+<script src="scripts/thirdparty/mojo.min.js"></script>
+<script src="scripts/config/mojo_config.js"></script>
+<script src="scripts/MY_APP.min.js"></script>
+</body>
+</html>

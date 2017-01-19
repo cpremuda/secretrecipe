@@ -1,0 +1,68 @@
+/* includes styles tha are only applicable to SVG */
+
+body {
+    font-family: Helvetica, arial, san-serif;
+}
+div.instructions {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+path.link {
+    fill: none;
+    stroke: #333;
+    stroke-width: 1px;
+}
+
+marker#inter {
+    fill: green;
+}
+
+path.link.group {
+    stroke: #fff;
+}
+
+path.link.intra {
+    stroke: #333;
+}
+
+path.link.inter {
+    stroke-dasharray: 3 3;
+}
+
+line {
+    stroke: rgba(32,32,32, 1);
+    stroke-dasharray: 3 6;
+}
+
+circle {
+    fill: #ccc;
+    stroke: #333;
+    stroke-width: 1.5px;
+}
+circle.VIEW {
+    color: #7bb4ff;
+    fill: #7BB4FF;
+}
+circle.ACTION {
+    fill: #0a0;
+}
+circle.END {
+    fill: #000;
+}
+circle.FLOW_GROUP {
+    display: block;
+    fill: rgba(220, 220, 220, 1);
+    stroke:none;
+}
+circle.FIRST {
+    display: block;
+    stroke-width: 3.5px;
+    fill: rgba(220, 220, 220, 1);
+    stroke:rgba(80,220,80,0.7);
+}
+text {
+    font: 13px sans-serif;
+    pointer-events: none;
+}

@@ -13,7 +13,7 @@ module.exports = {
 
     endpoints : {
         "log" : "log/",
-        "uiconfig" : "ping/uiconfig",
+        "uiconfig" : "config",
         "auth" : {
             "loggedin" : "auth/loggedin",
             "signin" : "auth/signin",

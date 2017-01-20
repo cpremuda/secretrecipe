@@ -25,7 +25,8 @@ Mojo.setOptions({
     viewResolverOptions : {
 
         pathToViews : {
-            "default" : "views"
+            "default" : "views",
+            "auth" : "${default}/auth"
         },
         aliasMap : {
             "*" : ".html"

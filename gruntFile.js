@@ -18,6 +18,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-minjson');
     grunt.loadNpmTasks('grunt-merge-json');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-string-replace');
 
     grunt.loadTasks('./grunt/tasks');
 
@@ -26,7 +27,9 @@ module.exports = function (grunt) {
     var options = {
         config : {
             src : "grunt/*.js"
-        }
+        },
+        pkg : grunt.file.readJSON('package.json')
+
     };
     var configs = require('load-grunt-configs')(grunt, options);
 
@@ -39,10 +42,8 @@ module.exports = function (grunt) {
     //grunt.registerTask('phantomJSTests', ['browserify', 'phantom']);
     //grunt.registerTask('phantom', ['mocha_phantomjs']);
     grunt.registerTask('js-hint', ['jshint:all']);
-    grunt.registerTask('release', ['jshint', 'clean:targets', 'copy:main', 'browserify:standalone', 'uglify', 'less', 'karma', 'flowcheck', 'gzip']);
-    grunt.registerTask('build', ['jshint', 'clean:targets', 'copy:main', 'browserify:standalone', 'uglify', 'copy:debug', 'less', 'flowcheck']);
-    grunt.registerTask('run-tests', ['jshint', 'clean:coverage', 'browserify:tests', 'copy:test', 'karma']);
+    grunt.registerTask('release', ['jshint', 'clean:targets', 'copy:main', 'browserify:standalone', 'string-replace', 'uglify', 'less', 'karma', 'flowcheck', 'gzip']);
+    grunt.registerTask('build', ['jshint', 'clean:targets', 'copy:main', 'browserify:standalone', 'string-replace', 'uglify', 'copy:debug', 'less', 'flowcheck']);
+    grunt.registerTask('run-tests', ['jshint', 'clean:coverage', 'browserify:tests', 'copy:test', 'string-replace', 'karma']);
     grunt.registerTask('run-browsers', ['browserSync']);
-
-
 };

@@ -3,7 +3,7 @@ var assert = require('chai').assert;
 var expect = require('chai').expect;
 var sinon = require('sinon');
 
-var APP = require('../../src/MY_APP');
+var APP = require('../../src/index');
 
 describe("MY_APP", function () {
 

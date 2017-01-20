@@ -1,23 +1,33 @@
+
 module.exports = {
     main : {
         files : [
-            // includes files within path and its sub-directories
-            //'!app/resources/webanalytics/*' excludes any files within that directory
-            //the analytic files will be copied during a json merge task.
             {
                 expand : true,
-                src : ['app/**', '!app/resources/webanalytics/*'],
+                src : ['app/**'],
                 dest : 'target/release/'
-            },
-            {
-                expand : false,
-                src : ['app/ppc.html'],
-                dest : 'target/release/app/lp/ty15.html'
             }
-        ]
+        ],
+        options: { // we'll handle this in the string-replace grunt task
+            //process : function (content, srcpath) {
+            //    if ( (srcpath.indexOf('img') > 0) || (srcpath.indexOf('css') > 0) )
+            //        return content;
+            //
+            //    try {
+            //        // replace <%= pkg.xxx %> in the source code with value from the package.json file
+            //        return content.replace(/((<%= pkg\.)(.*?)(\s%>))/g, function () {
+            //            var key = arguments[3];
+            //            return pkg[key];
+            //        });
+            //    }
+            //    catch(ex) {
+            //        console.log(ex.message)
+            //    }
+            //}
+        }
     },
     debug : {
-        // Deploy the maximized version of Mojo
+        // Deploy the maximized version of Mojo and APP
         files : [
             {
                 flatten : true,
@@ -28,8 +38,8 @@ module.exports = {
             {
                 flatten : true,
                 expand : false,
-                dest : 'target/release/app/scripts/MY_APP.min.js',
-                src : ['target/release/app/scripts/MY_APP.js']
+                dest : 'target/release/app/scripts/<%= pkg.name %>.min.js',
+                src : ['target/release/app/scripts/<%= pkg.name %>.js']
             }
 
         ]

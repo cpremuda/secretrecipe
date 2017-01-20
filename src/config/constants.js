@@ -1,7 +1,7 @@
 module.exports = {
-    version : "0.0.1",
+    version : "<%= pkg.version %>",
     server: 'http://'+location.hostname.toLowerCase()+'/app/',
-    appName : "MY_APP",
+    appName : "<%= pkg.name %>",
 
     events : {
         init : "init",
@@ -9,10 +9,6 @@ module.exports = {
             loggedIn : "auth.loggedIn",
             loggedOut : "auth.loggedOut"
         }
-    },
-
-    ui : {
-        maxUploadSize : 5000000 // 5m
     },
 
     endpoints : {

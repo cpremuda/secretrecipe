@@ -30,7 +30,7 @@ module.exports = function (config) {
             // 'app/scripts/config/mojo_config.js',
              'app/scripts/thirdparty/mojo.js',
             // 'app/scripts/MY_APP.js',
-            'src/MY_APP.js',
+            'src/index.js',
             //            'app/scripts/thirdparty/mojo-dev.js',
             'test/tests/**/*.test.js'
             //            'app/scripts/**/*.js',

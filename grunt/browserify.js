@@ -1,19 +1,19 @@
 module.exports = {
     standalone : {
-        src : 'src/MY_APP.js',
-        dest : 'target/release/app/scripts/MY_APP.js',
+        src : 'src/index.js',
+        dest : 'target/release/app/scripts/<%= pkg.name %>.js',
         options : {
             browserifyOptions : {
                 _comment_ : "build source maps",
                 debug : true,
-                standalone : 'MY_APP'
+                standalone : '<%= pkg.name %>'
             }
         }
     },
 
     istanbul : {
-        src : 'src/MY_APP.js',
-        dest : 'target/browserify/MY_APP-istanbul.js',
+        src : 'src/index.js',
+        dest : 'target/browserify/<%= pkg.name %>-istanbul.js',
         transform : [
             'browserify-istanbul'
         ],
@@ -21,7 +21,7 @@ module.exports = {
             browserifyOptions : {
                 _comment_ : "build source maps",
                 debug : true,
-                standalone : 'MY_APP'
+                standalone : '<%= pkg.name %>'
             }
         }
     },
@@ -33,7 +33,7 @@ module.exports = {
             transform : [
                 'rewireify'
             ],
-            external : ['MY_APP.js'],
+            external : ['<%= pkg.name %>.js'],
             // Embed source map for tests
             debug : true
         }

@@ -7,7 +7,7 @@ var logger = require('./controllers/logging_controller'),
     auth = require('./controllers/auth_controller'),
     constants = require('./config/constants');
 
-var app = require('./app/MY_APPApp');
+var app = require('./app/app');
 
 module.exports = {
 

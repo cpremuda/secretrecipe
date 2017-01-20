@@ -11,7 +11,7 @@ var _component = "ConfigController";
  * We can use this for turning on/off features or functionality based on a number of conditions
  *  - browser/OS
  *  - runtime environment (dev/qa/prod)
- *  - serverside configurations which can be updated realtime
+ *  - server-side configurations which can be updated realtime
  *  - etc...
  */
 var CONFIG = {
@@ -20,6 +20,7 @@ var CONFIG = {
     supports : {
         fileUpload : (typeof FileReader != 'undefined')
     },
+    maxUploadSize : 5000000, // 5m
     isProd : true,
     appVersion : "?",
     env : "?",

@@ -53,9 +53,9 @@ module.exports = {
             username : Mojo.getDataVal("authModel", "username"),
             password : Mojo.getDataVal("authModel", "password")
         };
-        Mojo.remove("authModel", "errorMsg");
+        //Mojo.remove("authModel", "errorMsg");
 
-        http.post(endpoints.signin, data, function (err, results) {
+        http.post(endpoints.login, data, function (err, results) {
             if (err) {
                 Mojo.setDataVal("authModel", "isLoggedIn", false);
                 Mojo.setDataVal("authModel", "authId", null);

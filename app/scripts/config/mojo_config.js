@@ -37,7 +37,8 @@ Mojo.setOptions({
     flowResolverOptions : {
 
         pathToFlows : {
-            "default" : "flows"
+            "default" : "flows",
+            "auth" : "${default}/auth"
         },
         aliasMap : {
             "*" : ".json"

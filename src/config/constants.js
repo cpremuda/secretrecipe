@@ -16,7 +16,7 @@ module.exports = {
         "uiconfig" : "config",
         "auth" : {
             "loggedin" : "auth/loggedin",
-            "signin" : "auth/signin",
+            "login" : "auth/login",
             "createaccount" : "auth/createaccount",
             "logout" : "auth/logout"
         }
